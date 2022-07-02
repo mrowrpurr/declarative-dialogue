@@ -8,6 +8,71 @@
 */
 
 #include "dialogue.h"
+#include "define.h"
+#include "sfall/sfall.h"
+
+// #define LADY_NAME "Mrowr Purr"
+// #define LADY_TILE 18089
+// #define LADY_SCRIPT SCRIPT_ECELRON // This has procedure talk, map_enter, description, and look_at
+
+// variable lady;
+
+// procedure try_again begin
+//     display_msg("HOLY FUCK IT WORK");
+//     return "hello";
+// end
+
+// procedure standard_proc_hook begin
+//     variable proc_id = get_sfall_arg, target = get_sfall_arg;
+//     display_msg("PROC: " + proc_id + " TARGET: " + target);
+//     // if lady and target == lady then begin
+//         // display_msg("PROC for the LADY: " + proc_id);
+//     // end
+// end
+
+// procedure start begin
+//     variable x, foo;
+//     display_msg("TRYING...");
+//     x = "try_again";
+//     foo = x();
+//     display_msg("tried.");
+//     display_msg("RETURNED: " + foo);
+
+//     if game_loaded and cur_map_index == MAP_ARROYO_TEMPLE then begin
+//         variable objs = tile_get_objs(LADY_TILE, 0);
+//         if objs then begin
+//             lady = objs[0];
+//             set_script(lady, SCRIPT_ECELRON);
+//             register_hook_proc(HOOK_STDPROCEDURE, standard_proc_hook);
+//         end
+//     end
+// end
+
+procedure foo begin
+    display_msg("Called foo. Fixed! FALSE OK...");
+    // return "something";
+end
+ 
+variable x;
 
 procedure start begin
+    variable x, fn;
+
+    if x then call foo();
+
+    // display_msg("CALLING FOO:");
+    // call foo();
+    // display_msg("OK NOW...");
+
+    
+
+    if game_loaded then begin
+       // variable fn = "foo"; <--- this doesn't work either, same compiler error
+       display_msg("A");
+       fn = "foo";
+       display_msg("B");
+       x = fn(); // <--- "Assignment operator expected." error on this line
+       display_msg("C");
+       display_msg("RETURN VALUE: " + x);
+    end
 end
