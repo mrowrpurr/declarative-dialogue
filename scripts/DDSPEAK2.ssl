@@ -1,0 +1,5 @@
+procedure critter_p_proc begin
+end
+
+procedure talk_p_proc begin
+end
