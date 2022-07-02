@@ -9,7 +9,14 @@
 
 #include "dialogue.h"
 
+#define LADY_NAME "Mrowr"
+
 procedure critter_p_proc begin
+end
+
+procedure look_at_p_proc begin
+    script_overrides;
+    display_msg("You see " + LADY_NAME);
 end
 
 procedure talk_p_proc begin
