@@ -14,10 +14,32 @@
 procedure critter_p_proc begin
 end
 
+procedure do_something begin
+    display_msg("DO SOMETHING!");
+end
+
+procedure do_something_else begin
+    display_msg("DO SOMETHING *else*!");
+end
+
 procedure look_at_p_proc begin
     script_overrides;
     display_msg("You see " + LADY_NAME);
 end
 
 procedure talk_p_proc begin
+    // Example of how dialogue.h will invoke procedures by name:
+    call_dialogue_proc("do_something");
+    call_dialogue_proc("do_something_else");
+end
+
+procedure setup_dialogue_procedures begin
+    dialogue_procs begin
+        dialogue_proc do_something;
+        dialogue_proc do_something_else;
+    end
+end
+
+procedure start begin
+    call setup_dialogue_procedures;
 end
