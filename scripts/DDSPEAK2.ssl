@@ -1,3 +1,10 @@
+/*
+    DDSPEAK2 shows an example of a script using dialogue.h
+    to control dialogue flow/responses using sfall Maps.
+*/
+
+#include "dialogue.h"
+
 procedure critter_p_proc begin
 end
 

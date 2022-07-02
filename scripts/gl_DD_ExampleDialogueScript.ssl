@@ -1,0 +1,9 @@
+/*
+    gl_DD_ExampleDialogueScript shows an example of a global
+    script using dialogue.h to control dialogue flow/responses.
+*/
+
+#include "dialogue.h"
+
+procedure start begin
+end
